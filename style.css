@@ -1,6 +1,5 @@
 #picture {
-    width: 500px;
-    height: 500px;
+    width: min(90vw, 500px);
     object-fit: cover;
     object-position: center;
     border: 10px solid #1e78ff;
