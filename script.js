@@ -51,5 +51,4 @@ rollBtn.onclick = function () {
     saveCharacter(character);
     rollBtn.disabled = true;
     rollBtn.innerText = 'Come back tomorrow'
-
 }
