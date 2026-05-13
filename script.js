@@ -17,3 +17,22 @@ const characters = [
     }
 ]
 
+const picture = document.getElementById('picture');
+const charname = document.getElementById('name');
+const rollBtn = document.getElementById('rollBtn');
+
+function displayCharacter (character) {
+    picture.src = character.image;
+    picture.alt = character.name;
+    charname.innerText = character.name;
+}
+
+rollBtn.onclick = function () {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    const character = characters[randomIndex];
+    displayCharacter(character);
+    localStorage.setItem(
+        'character',
+        JSON.stringify(character)
+    );
+}
