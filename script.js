@@ -38,7 +38,6 @@ function saveCharacter (character) {
 if (savedCharacter && savedDate === today) {
     const character = JSON.parse(savedCharacter);
     displayCharacter(character);
-
     rollBtn.disabled = true;
     rollBtn.innerText = 'Come back tomorrow'
 }
@@ -47,7 +46,6 @@ rollBtn.onclick = function () {
     const randomIndex = Math.floor(Math.random() * characters.length);
     const character = characters[randomIndex];
     displayCharacter(character);
-
     saveCharacter(character);
     rollBtn.disabled = true;
     rollBtn.innerText = 'Come back tomorrow'
