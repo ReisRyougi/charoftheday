@@ -101,7 +101,7 @@ const characters = [
     },
     {
         name: 'Emiya Shiro',
-        image: '.img/tm/fsn/shiro.jpg'
+        image: './img/tm/fsn/shiro.jpg'
     },
     {
         name: 'Illyasviel von Einzbern',
