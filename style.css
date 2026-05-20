@@ -1,7 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+    font-family: Georgia, serif;
+    background: linear-gradient(rgba(8, 14, 30, 0.88), rgba(8, 14, 30, 0.92));
+    color: white;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: white;
+}
+
+main {
+    width: min(90%, 42rem);
+    background: rgba(18, 27, 48, 0.82);
+    border: 1px solid rgba(160, 190, 255, 0.25);
+    border-radius: 0.5rem;
+    padding: 2.5rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.character {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.frame {
+    padding: 0.8rem;
+    border-radius: 1.5rem;
+    background: linear-gradient(145deg, #5f8fff, #29437d);
+}
+
 #picture {
-    width: 500px;
-    height: 500px;
+    width: 22rem;
+    height: 22rem;
     object-fit: cover;
     object-position: center;
-    border: 10px solid #1e78ff;
+    display: block;
+    border-radius: 0.5rem;
+    border: 0.2rem solid rgba(255,255,255,0.2);
+}
+
+#name {
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+#roll {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#roll p {
+    color: white;
+}
+
+#rollBtn {
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 999px;
+    background: #3559a8;
+    color: white;
+    cursor: pointer;
+    transition:
+            transform 0.2s,
+            background 0.2s,
+            box-shadow 0.2s;
+}
+
+#rollBtn:hover {
+    background: #4c74cf;
+}
+
+#rollBtn:disabled {
+    background: #2a3550;
+    color: #9aa7c5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    #picture {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    #name {
+        font-size: 1.5rem;
+        text-align: center;
+    }
 }
