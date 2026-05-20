@@ -1,102 +1,12 @@
 const characters = [
     {
         name: 'Arcueid Brunestud',
-        image: './img/tm/t/arc.jpg'
+        image: './img/tm/arc.jpg'
     },
     {
-        name: 'Tohno Shiki',
-        image: './img/tm/t/tohno.png'
+        name: 'Artoria Pendragon',
+        image: './img/tm/fsn/saber.jpg'
     },
-    {
-        name: 'Tohno Akiha',
-        image: './img/tm/t/akiha.webp'
-    },
-    {
-        name: 'Hisui',
-        image: './img/tm/t/hisui.webp'
-    },
-    {
-        name: 'Yumizuka Satsuki',
-        image: './img/tm/t/satsuki.webp'
-    },
-    {
-        name: 'Len',
-        image: './img/tm/t/len.webp'
-    },
-    {
-        name: 'Kohaku',
-        image: './img/tm/t/kohaku.webp'
-    },
-    {
-        name: 'Ciel',
-        image: './img/tm/t/ciel.webp'
-    },
-    {
-        name: 'Issei Ryuudou',
-        image: './img/tm/fsn/issei.webp'
-    },
-    {
-        name: 'Rin Tohsaka',
-        image: './img/tm/fsn/rin.webp'
-    },
-    {
-        name: 'EMIYA',
-        image: './img/tm/fsn/emiya.webp'
-    },
-    {
-        name: 'Heracles',
-        image: './img/tm/fsn/heracles.webp'
-    },
-    {
-        name: 'Matou Sakura',
-        image: './img/tm/fsn/sakura.webp'
-    },
-    {
-        name: 'Matou Shinji',
-        image: './img/tm/fsn/shinji.webp'
-    },
-    {
-        name: 'Medusa',
-        image: './img/tm/fsn/medusa.webp'
-    },
-    {
-        name: 'Medea',
-        image: './img/tm/fsn/medea.webp'
-    },
-    {
-        name: 'Kuzuki Souichirou',
-        image: './img/tm/fsn/souichirou.webp'
-    },
-    {
-        name: 'Sasaki Kojirou',
-        image: './img/tm/fsn/kojirou.webp'
-    },
-    {
-        name: 'Cú Chulainn',
-        image: './img/tm/fsn/cu.jpg'
-    },
-    {
-        name: 'Kotomine Kirei',
-        image: './img/tm/fsn/kirei.jpg'
-    },
-    {
-        name: 'Gilgamesh',
-        image: './img/tm/fsn/gil.jpg'
-    },
-    {
-        name: 'Matou Zouken',
-        image: './img/tm/fsn/zouken.webp'
-    },
-    {
-        name: 'Hassan of the Cursed Arm',
-        image: './img/tm/fsn/hassan.webp'
-    },
-    {
-        name: 'Fujimura Taiga',
-        image: './img/tm/fsn/taiga.webp'
-    },
-
-
     {
         name: 'Ryougi Shiki',
         image: './img/tm/knk/ryougi.jpg'
@@ -121,7 +31,6 @@ const characters = [
         name: 'Aozaki Touko',
         image: './img/tm/knk/touko.webp'
     },
-
     {
         name: 'Aozaki Aoko',
         image: './img/tm/mh/aoko.jpg'
@@ -182,18 +91,18 @@ function saveCharacter (character) {
     localStorage.setItem('date', today)
 }
 
-if (savedCharacter && savedDate === today) {
-    const character = JSON.parse(savedCharacter);
-    displayCharacter(character);
-    rollBtn.disabled = true;
-    rollBtn.innerText = 'Come back tomorrow'
-}
+//if (savedCharacter && savedDate === today) {
+//    const character = JSON.parse(savedCharacter);
+//    displayCharacter(character);
+//    rollBtn.disabled = true;
+//    rollBtn.innerText = 'Come back tomorrow'
+//}
 
 rollBtn.onclick = function () {
     const randomIndex = Math.floor(Math.random() * characters.length);
     const character = characters[randomIndex];
     displayCharacter(character);
     saveCharacter(character);
-    rollBtn.disabled = true;
-    rollBtn.innerText = 'Come back tomorrow'
+//    rollBtn.disabled = true;
+//    rollBtn.innerText = 'Come back tomorrow'
 }
