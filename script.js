@@ -44,6 +44,66 @@ const characters = [
         name: 'Illyasviel von Einzbern',
         image: './img/tm/fsn/illya.jpg'
     },
+    {
+        name: 'Rin Tohsaka',
+        image: './img/tm/fsn/rin.webp'
+    },
+    {
+        name: 'EMIYA',
+        image: './img/tm/fsn/emiya.webp'
+    },
+    {
+        name: 'Heracles',
+        image: './img/tm/fsn/heracles.webp'
+    },
+    {
+        name: 'Matou Sakura',
+        image: './img/tm/fsn/sakura.webp'
+    },
+    {
+        name: 'Matou Shinji',
+        image: './img/tm/fsn/shinji.webp'
+    },
+    {
+        name: 'Medusa',
+        image: './img/tm/fsn/medusa.webp'
+    },
+    {
+        name: 'Medea',
+        image: './img/tm/fsn/medea.webp'
+    },
+    {
+        name: 'Kuzuki Souichirou',
+        image: './img/tm/fsn/souichirou.webp'
+    },
+    {
+        name: 'Sasaki Kojirou',
+        image: './img/tm/fsn/kojirou.webp'
+    },
+    {
+        name: 'Cú Chulainn',
+        image: './img/tm/fsn/cu.jpg'
+    },
+    {
+        name: 'Kotomine Kirei',
+        image: './img/tm/fsn/kirei.jpg'
+    },
+    {
+        name: 'Gilgamesh',
+        image: './img/tm/fsn/gil.jpg'
+    },
+    {
+        name: 'Matou Zouken',
+        image: './img/tm/fsn/zouken.webp'
+    },
+    {
+        name: 'Hassan of the Cursed Arm',
+        image: './img/tm/fsn/hassan.webp'
+    },
+    {
+        name: 'Fujimura Taiga',
+        image: './img/tm/fsn/taiga.webp'
+    },
 
     {
         name: 'Ryougi Shiki',
