@@ -1,12 +1,50 @@
 const characters = [
     {
         name: 'Arcueid Brunestud',
-        image: './img/tm/arc.jpg'
+        image: './img/tm/t/arc.jpg'
     },
+    {
+        name: 'Tohno Shiki',
+        image: './img/tm/t/tohno.png'
+    },
+    {
+        name: 'Tohno Akiha',
+        image: './img/tm/t/akiha.webp'
+    },
+    {
+        name: 'Hisui',
+        image: './img/tm/t/hisui.webp'
+    },
+    {
+        name: 'Yumizuka Satsuki',
+        image: './img/tm/t/satsuki.webp'
+    },
+    {
+        name: 'Len',
+        image: './img/tm/t/len.webp'
+    },
+    {
+        name: 'Kohaku',
+        image: './img/tm/t/kohaku.webp'
+    },
+    {
+        name: 'Ciel',
+        image: './img/tm/t/ciel.webp'
+    },
+
     {
         name: 'Artoria Pendragon',
         image: './img/tm/fsn/saber.jpg'
     },
+    {
+        name: 'Emiya Shiro',
+        image: './img/tm/fsn/shiro.jpg'
+    },
+    {
+        name: 'Illyasviel von Einzbern',
+        image: './img/tm/fsn/illya.jpg'
+    },
+
     {
         name: 'Ryougi Shiki',
         image: './img/tm/knk/ryougi.jpg'
@@ -31,6 +69,7 @@ const characters = [
         name: 'Aozaki Touko',
         image: './img/tm/knk/touko.webp'
     },
+
     {
         name: 'Aozaki Aoko',
         image: './img/tm/mh/aoko.jpg'
