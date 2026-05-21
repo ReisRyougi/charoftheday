@@ -32,6 +32,26 @@ const characters = [
         name: 'Ciel',
         image: './img/tm/t/ciel.webp'
     },
+    {
+        name: 'Neco-Arc',
+        image: './img/tm/t/necoarc.webp'
+    },
+    {
+        name: 'ORT',
+        image: './img/tm/t/ort.png'
+    },
+    {
+        name: 'Michael Roa Valdamjong',
+        image: './img/tm/t/mrv.png'
+    },
+    {
+        name: 'Kischur Zelretch Schweinorg',
+        image: './img/tm/t/zelretch.webp'
+    },
+    {
+        name: 'Sion Eltnam Atlasia',
+        image: './img/tm/t/sion.webp'
+    },
     // Fate Stay Night
     {
         name: 'Artoria Pendragon',
