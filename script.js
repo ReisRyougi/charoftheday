@@ -1,4 +1,5 @@
 const characters = [
+    // Tsukihime
     {
         name: 'Arcueid Brunestud',
         image: './img/tm/t/arc.jpg'
@@ -31,7 +32,7 @@ const characters = [
         name: 'Ciel',
         image: './img/tm/t/ciel.webp'
     },
-
+    // Fate Stay Night
     {
         name: 'Artoria Pendragon',
         image: './img/tm/fsn/saber.jpg'
@@ -104,7 +105,7 @@ const characters = [
         name: 'Fujimura Taiga',
         image: './img/tm/fsn/taiga.webp'
     },
-
+    // KnK
     {
         name: 'Ryougi Shiki',
         image: './img/tm/knk/ryougi.jpg'
@@ -129,7 +130,7 @@ const characters = [
         name: 'Aozaki Touko',
         image: './img/tm/knk/touko.webp'
     },
-
+    // Mahoyo
     {
         name: 'Aozaki Aoko',
         image: './img/tm/mh/aoko.jpg'
@@ -179,6 +180,31 @@ const today = new Date().toDateString();
 const savedCharacter = localStorage.getItem('character');
 const savedDate = localStorage.getItem('date');
 
+function getTimeUntilMidnight() {
+    const now = new Date();
+    const midnight = new Date();
+    midnight.setHours(24, 0, 0, 0);
+    const diff = midnight - now;
+    const hours   = Math.floor(diff / 1000 / 60 / 60);
+    const minutes = Math.floor(diff / 1000 / 60) % 60;
+    const seconds = Math.floor(diff / 1000) % 60;
+    // padStart to make the thing be like 09:07:04 and not 9:7:4
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function startCountdown() {
+    rollBtn.innerText = `Come back in ${getTimeUntilMidnight()}`;
+    // setInterval(func, 1000) is to repeat function every sec
+    const interval = setInterval(() => {
+        const time = getTimeUntilMidnight();
+        rollBtn.innerText = `Come back in ${time}`;
+        if (time === '00:00:00') {
+            clearInterval(interval);
+            location.reload();
+        }
+    }, 1000);
+}
+
 function displayCharacter (character) {
     picture.src = character.image;
     picture.alt = character.name;
@@ -194,7 +220,7 @@ if (savedCharacter && savedDate === today) {
     const character = JSON.parse(savedCharacter);
     displayCharacter(character);
     rollBtn.disabled = true;
-    rollBtn.innerText = 'Come back tomorrow'
+    startCountdown();
 }
 
 rollBtn.onclick = function () {
@@ -203,5 +229,5 @@ rollBtn.onclick = function () {
     displayCharacter(character);
     saveCharacter(character);
     rollBtn.disabled = true;
-    rollBtn.innerText = 'Come back tomorrow'
+    startCountdown();
 }
