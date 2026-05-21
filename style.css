@@ -106,6 +106,19 @@ h2 {
     box-shadow: none;
 }
 
+footer {
+    background-color: #2a3550;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer a, a:visited, a:hover, a:active {
+    color: white;
+}
+
 @media (max-width: 700px) {
 
     h1 {
