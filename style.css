@@ -11,7 +11,7 @@ body {
     align-items: center;
     padding: 3rem 1rem;
     font-family: Georgia, serif;
-    background: linear-gradient(rgba(8, 14, 30, 0.88), rgba(8, 14, 30, 0.92));
+    background: rgba(8, 14, 30, 0.88);
     color: white;
 }
 
@@ -107,7 +107,7 @@ h2 {
 }
 
 footer {
-    background-color: #2a3550;
+    background-color: rgba(18, 27, 48, 0.82);
     position: fixed;
     bottom: 0;
     left: 0;
