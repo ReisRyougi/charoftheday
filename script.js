@@ -196,7 +196,38 @@ const characters = [
         image: './img/tm/mh/eiri.webp'
     },
     // Fate Hollow Ataraxia
-
+    {
+        name: 'Luviagelita Edelfelt',
+        image: './img/tm/fha/luvia.webp'
+    },
+    {
+        name: 'Bazett Fraga McRemitz',
+        image: './img/tm/fha/bazett.webp'
+    },
+    {
+        name: 'Caren Hortensia',
+        image: './img/tm/fha/caren.webp'
+    },
+    {
+        name: 'Euryale',
+        image: './img/tm/fha/euryale.webp'
+    },
+    {
+        name: 'Stheno',
+        image: './img/tm/fha/stheno.webp'
+    },
+    {
+        name: 'Sella',
+        image: './img/tm/fha/sella.jpg'
+    },
+    {
+        name: 'Leysritt',
+        image: './img/tm/fha/leysritt.jpg'
+    },
+    {
+        name: 'Angra Mainyu',
+        image: './img/tm/fha/angra.webp'
+    }
 ]
 
 const picture = document.getElementById('picture');
