@@ -125,6 +125,10 @@ const characters = [
         name: 'Fujimura Taiga',
         image: './img/tm/fsn/taiga.webp'
     },
+    {
+        name: 'Artoria Pendragon Alter',
+        image: './img/tm/fsn/salter.webp'
+    },
     // KnK
     {
         name: 'Ryougi Shiki',
@@ -190,7 +194,9 @@ const characters = [
     {
         name: 'Fumizuka Eiri',
         image: './img/tm/mh/eiri.webp'
-    }
+    },
+    // Fate Hollow Ataraxia
+
 ]
 
 const picture = document.getElementById('picture');
