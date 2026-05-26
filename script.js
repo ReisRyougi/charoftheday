@@ -1,3 +1,5 @@
+const DEBUG = false; // manual debug switch
+
 const characters = [
     // Tsukihime
     {
@@ -227,6 +229,75 @@ const characters = [
     {
         name: 'Angra Mainyu',
         image: './img/tm/fha/angra.webp'
+    },
+    // Fate Zero
+    {
+        name: 'Tohsaka Aoi',
+        image: './img/tm/fz/aoi.webp'
+    },
+    {
+        name: 'Matou Kariya',
+        image: './img/tm/fz/kariya.webp'
+    },
+    {
+        name: 'Kayneth El-Melloi Archibald',
+        image: './img/tm/fz/kayneth.webp'
+    },
+    {
+        name: 'Emiya Kiritsugu',
+        image: './img/tm/fz/kiritsugu.webp'
+    },
+    {
+        name: 'Diarmuid Ua Duibhne',
+        image: './img/tm/fz/diar.webp'
+    },
+    {
+        name: 'Lancelot (Berserker)',
+        image: './img/tm/fz/berselot.webp'
+    },
+    {
+        name: 'Hisau Maiya',
+        image: './img/tm/fz/maiya.webp'
+    },
+    {
+        name: 'Natalia Kaminski',
+        image: './img/tm/fz/natalia.webp'
+    },
+    {
+        name: 'Gilles de Rais',
+        image: './img/tm/fz/gilles.webp'
+    },
+    {
+        name: 'Hassan of the Hundred Faces',
+        image: './img/tm/fz/100h.webp'
+    },
+    {
+        name: 'Uryuu Ryuunosuke',
+        image: './img/tm/fz/uryuu.webp'
+    },
+    {
+        name: 'Irisviel von Einzbern',
+        image: './img/tm/fz/iri.webp'
+    },
+    {
+        name: 'Iskandar',
+        image: './img/tm/fz/iskandar.webp'
+    },
+    {
+        name: 'Sola-Ui Nuada-Re Sophia-Ri',
+        image: './img/tm/fz/sola.webp'
+    },
+    {
+        name: 'Shirley',
+        image: './img/tm/fz/shirley.webp'
+    },
+    {
+        name: 'Tohsaka Tokiomi',
+        image: './img/tm/fz/tokiomi.webp'
+    },
+    {
+        name: 'Waver Velvet',
+        image: './img/tm/fz/waver.webp'
     }
 ]
 
@@ -236,6 +307,42 @@ const rollBtn = document.getElementById('rollBtn');
 const today = new Date().toDateString();
 const savedCharacter = localStorage.getItem('character');
 const savedDate = localStorage.getItem('date');
+
+function showDebugGrid() {
+    if (!DEBUG) return;
+    // make the grid with all characters
+    const grid = document.createElement('section');
+    grid.style.cssText = `
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+        padding: 2rem;
+        margin-top: 2rem;
+    `;
+    // looping over every char
+    characters.forEach((char, i) => {
+        const cell = document.createElement('div');
+        cell.style.cssText = `text-align: center; font-size: 0.75rem;`;
+        const img = document.createElement('img');
+        img.src = char.image;
+        img.alt = char.name;
+        img.style.cssText = `width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem;`;
+        // red thing if image fails to load
+        img.onerror = () => {
+            img.style.border = '3px solid red';
+            label.style.color = 'red';
+        };
+
+        const label = document.createElement('p');
+        label.innerText = `[${i}] ${char.name}`;
+        cell.appendChild(img);
+        cell.appendChild(label);
+        grid.appendChild(cell);
+    });
+    document.querySelector('main').appendChild(grid);
+}
+
+showDebugGrid();
 
 function getTimeUntilMidnight() {
     const now = new Date();
