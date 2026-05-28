@@ -298,6 +298,91 @@ const characters = [
     {
         name: 'Waver Velvet',
         image: './img/tm/fz/waver.webp'
+    },
+    // Fate Strange Fake
+    {
+        name: 'Ayaka Sajyou',
+        image: './img/tm/fsf/ayaka.jpg'
+    },
+    {
+        name: 'Bazdilot Cordelion',
+        image: './img/tm/fsf/bazdilot.webp'
+    },
+    {
+        name: 'No Name Assassin',
+        image: './img/tm/fsf/zealot.webp'
+    },
+    {
+        name: 'Pale Rider',
+        image: './img/tm/fsf/palerider.webp'
+    },
+    {
+        name: 'Philia',
+        image: './img/tm/fsf/philia.webp'
+    },
+    {
+        name: 'Enkidu',
+        image: './img/tm/fsf/enkidu.jpg'
+    },
+    {
+        name: 'Richard I',
+        image: './img/tm/fsf/richard.webp'
+    },
+    {
+        name: 'Faldeus Dioland',
+        image: './img/tm/fsf/faldeus.webp'
+    },
+    {
+        name: 'Flat Escardos',
+        image: './img/tm/fsf/flat.webp'
+    },
+    {
+        name: 'Francesca Prelati',
+        image: './img/tm/fsf/francesca.webp'
+    },
+    {
+        name: 'François Prelati',
+        image: './img/tm/fsf/francois.png'
+    },
+    {
+        name: 'Sigma',
+        image: './img/tm/fsf/sigma.webp'
+    },
+    {
+        name: 'Hassan of the Fathomless Rift',
+        image: './img/tm/fsf/hassan.webp'
+    },
+    {
+        name: 'Hippolyta',
+        image: './img/tm/fsf/hippolyta.webp'
+    },
+    {
+        name: 'Tiné Chelc',
+        image: './img/tm/fsf/tine.webp'
+    },
+    {
+        name: 'Jack the Ripper (Berserker)',
+        image: './img/tm/fsf/jackbers.webp'
+    },
+    {
+        name: 'Orlando Reeve',
+        image: './img/tm/fsf/orlando.webp'
+    },
+    {
+        name: 'Vera Levitt',
+        image: './img/tm/fsf/vera.webp'
+    },
+    {
+        name: 'Alcides',
+        image: './img/tm/fsf/alcides.jpg'
+    },
+    {
+        name: 'Kuruoka Tsubaki',
+        image: './img/tm/fsf/tsubaki.webp'
+    },
+    {
+        name: 'Alexandre Dumas',
+        image: './img/tm/fsf/dumas.jpg'
     }
 ]
 
