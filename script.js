@@ -390,8 +390,44 @@ const picture = document.getElementById('picture');
 const charname = document.getElementById('name');
 const rollBtn = document.getElementById('rollBtn');
 const today = new Date().toDateString();
+//stuff from local storage
 const savedCharacter = localStorage.getItem('character');
 const savedDate = localStorage.getItem('date');
+const collection = JSON.parse(localStorage.getItem('collection')) || [];
+
+const collectionBtn = document.getElementById('collectionBtn');
+const collectionPanel = document.getElementById('collectionPanel');
+
+function buildCollectionPanel() {
+    collectionPanel.innerHTML = '';
+    const grid = document.createElement('section');
+    grid.className = 'collection-grid';
+    characters.forEach((character) => {
+        const cell = document.createElement('div');
+        cell.style.cssText = `text-align: center; font-size: 0.75rem;`;
+        const found = collection.find(entry => entry.name === character.name);
+        const img = document.createElement('img');
+        img.style.cssText = `width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem;`;
+        img.src = found ? character.image : './img/unknown.jpg';
+        img.title = found
+            ? (found.count > 1 ? `${character.name} x${found.count}` : character.name)
+            : 'locked';
+        cell.appendChild(img);
+        grid.appendChild(cell);
+    })
+    collectionPanel.appendChild(grid);
+}
+
+// open collection
+collectionBtn.onclick = function() {
+    collectionPanel.classList.toggle('open');
+}
+// close collection only if pressed outside of collection
+document.onclick = function(event) {
+    if (!collectionPanel.contains(event.target) && !collectionBtn.contains(event.target))  {
+        collectionPanel.classList.remove('open');
+    }
+}
 
 function showDebugGrid() {
     if (!DEBUG) return;
@@ -412,13 +448,12 @@ function showDebugGrid() {
         img.src = char.image;
         img.alt = char.name;
         img.style.cssText = `width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem;`;
+        const label = document.createElement('p');
         // red thing if image fails to load
         img.onerror = () => {
             img.style.border = '3px solid red';
             label.style.color = 'red';
         };
-
-        const label = document.createElement('p');
         label.innerText = `[${i}] ${char.name}`;
         cell.appendChild(img);
         cell.appendChild(label);
@@ -479,4 +514,18 @@ rollBtn.onclick = function () {
     saveCharacter(character);
     rollBtn.disabled = true;
     startCountdown();
+    // the find thing returns the object if found or undefined if not
+    const found = collection.find(entry => entry.name === character.name);
+    if (found) {
+        // character already in collection so make count bigger
+        found.count++;
+    } else {
+        // new character so add to collection
+        collection.push({ name: character.name, image: character.image, count: 1 });
+    }
+    // save updated collection to local storage
+    localStorage.setItem('collection', JSON.stringify(collection));
+    buildCollectionPanel()
 }
+
+buildCollectionPanel()
