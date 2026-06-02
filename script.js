@@ -383,6 +383,111 @@ const characters = [
     {
         name: 'Alexandre Dumas',
         image: './img/tm/fsf/dumas.jpg'
+    },
+    // Fate Apocrypha
+    {
+        name: 'Caules Forvedge Yggdmillennia',
+        image: './img/tm/fa/caules.webp'
+    },
+    {
+        name: 'Celenike Icecolle Yggdmillennia',
+        image: './img/tm/fa/celenike.jpg'
+    },
+    {
+        name: 'Chiron',
+        image: './img/tm/fa/chiron.webp'
+    },
+    {
+        name: 'Darnic Prestone Yggdmillennia',
+        image: './img/tm/fa/darnic.webp'
+    },
+    {
+        name: 'Rikudou Reika',
+        image: './img/tm/fa/reika.webp'
+    },
+    {
+        name: 'Roche Frain Yggdmillennia',
+        image: './img/tm/fa/roche.webp'
+    },
+    {
+        name: 'Fiore Forvedge Yggdmillennia',
+        image: './img/tm/fa/fiore.webp'
+    },
+    {
+        name: 'Frankenstein',
+        image: './img/tm/fa/fran.webp'
+    },
+    {
+        name: 'Sieg',
+        image: './img/tm/fa/sieg.webp'
+    },
+    {
+        name: 'Semiramis',
+        image: './img/tm/fa/semiramis.webp'
+    },
+    {
+        name: 'Siegfried',
+        image: './img/tm/fa/siegfried.webp'
+    },
+    {
+        name: 'Spartacus',
+        image: './img/tm/fa/spartacus.webp'
+    },
+    {
+        name: 'Gordes Musik Yggdmillennia',
+        image: './img/tm/fa/gordes.webp'
+    },
+    {
+        name: 'Vlad III',
+        image: './img/tm/fa/vlad.jpg'
+    },
+    {
+        name: 'Jack the Ripper (Assassin)',
+        image: './img/tm/fa/jackie.webp'
+    },
+    {
+        name: 'William Shakespeare',
+        image: './img/tm/fa/william.webp'
+    },
+    {
+        name: "Jeanne d'Arc",
+        image: './img/tm/fa/jeanne.jpg'
+    },
+    {
+        name: 'Karna',
+        image: './img/tm/fa/karna.webp'
+    },
+    {
+        name: 'Amakusa Shirou Tokisada',
+        image: './img/tm/fa/amakusa.webp'
+    },
+    {
+        name: 'Astolfo',
+        image: './img/tm/fa/astolfo.webp'
+    },
+    {
+        name: 'Atalanta',
+        image: './img/tm/fa/atalanta.webp'
+    },
+    {
+        name: 'Atalanta Alter',
+        image: './img/tm/fa/atalter.webp'
+    },
+    {
+        name: 'Avicebron',
+        image: './img/tm/fa/avicebron.webp'
+    },
+    {
+        name: 'Mordred',
+        image: './img/tm/fa/mordred.webp'
+    },
+    {
+        name: 'Achilles',
+        image: './img/tm/fa/achilles.webp'
+    },
+    {
+        name: 'Shishigou Kairi',
+        image: './img/tm/fa/kairi.webp'
     }
 ]
 
