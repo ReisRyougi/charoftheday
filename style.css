@@ -15,6 +15,7 @@ body {
 
 header {
     margin-bottom: 2rem;
+    position: relative;
     text-align: center;
     padding: 3rem 1rem 0;
 }
@@ -23,6 +24,22 @@ h1 {
     font-size: 2.5rem;
     text-align: center;
     color: white;
+}
+
+#collectionBtn {
+    position: absolute;
+    right: 1rem;
+    top: 3rem;
+    font-size: 2.5rem;
+    background: rgba(18, 27, 48, 0.82);
+    color: white;
+    border: 1px solid rgba(160, 190, 255, 0.25);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+}
+
+#collectionBtn:hover {
+    background: rgba(160, 190, 255, 0.25);
 }
 
 main {
@@ -108,6 +125,23 @@ h2 {
     box-shadow: none;
 }
 
+#collectionPanel {
+    background: #2a3550;
+    border: 1px solid rgba(160, 190, 255, 0.25);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 60%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+#collectionPanel.open {
+    transform: translateX(0);
+}
+
 footer {
     background-color: rgba(18, 27, 48, 0.82);
     width: 100%;
@@ -116,6 +150,14 @@ footer {
 
 footer a, a:visited, a:hover, a:active {
     color: white;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
 }
 
 @media (max-width: 700px) {
@@ -137,5 +179,20 @@ footer a, a:visited, a:hover, a:active {
     #name {
         font-size: 1.5rem;
         text-align: center;
+    }
+
+    #collectionBtn {
+        position: static; /* removes the absolute positioning */
+        display: block;
+        margin: 1rem auto 0; /* centers it */
+        font-size: 1.5rem; /* a bit smaller too */
+    }
+
+    #collectionPanel {
+        width: 70%;
+    }
+
+    .collection-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
     }
 }
