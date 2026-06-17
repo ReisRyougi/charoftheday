@@ -488,7 +488,57 @@ const characters = [
     {
         name: 'Shishigou Kairi',
         image: './img/tm/fa/kairi.webp'
-    }
+    },
+    // Fate Extra
+    {
+        name: 'Alice',
+        image: './img/tm/fe/alice.webp'
+    },
+    {
+        name: 'Li Shuwen',
+        image: './img/tm/fe/li.webp'
+    },
+    {
+        name: 'Scathach',
+        image: './img/tm/fe/scathach.webp'
+    },
+    {
+        name: 'Lü Bu',
+        image: './img/tm/fe/lu.webp'
+    },
+    {
+        name: 'BB',
+        image: './img/tm/fe/bb.webp'
+    },
+    {
+        name: 'Meltryllis',
+        image: './img/tm/fe/melt.webp'
+    },
+    {
+        name: 'Nero Claudius Caesar Augustus Germanicus',
+        image: './img/tm/fe/nero.webp'
+    },
+    {
+        name: 'Passionlip',
+        image: './img/tm/fe/passionlip.webp'
+    },
+    {
+        name: 'Elizabeth Báthory',
+        image: './img/tm/fe/eli.webp'
+    },
+    {
+        name: 'Rani VIII',
+        image: './img/tm/fe/rani.webp'
+    },
+    {
+        name: 'Kishinami Hakuno',
+        image: './img/tm/fe/hakuno.webp'
+    },
+    {
+        name: 'Tamamo-no-Mae',
+        image: './img/tm/fe/tamamo.webp'
+    },
+
 ]
 
 const picture = document.getElementById('picture');
