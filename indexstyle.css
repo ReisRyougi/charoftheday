@@ -76,3 +76,23 @@ main {
     font-size: 1.1rem;
     font-weight: bold;
 }
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .titlesgrid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .titlesgrid img {
+        max-width: 140px;
+    }
+
+    .titlesgrid p {
+        font-size: 0.95rem;
+    }
+}
