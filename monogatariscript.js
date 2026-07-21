@@ -1,13 +1,96 @@
 const DEBUG = false; // manual debug switch
 
+const characters = [
+    {
+        name: 'Koyomi Araragi',
+        image: './img/monogatari/koyomi.webp',
+    },
+    {
+        name: 'Karen Araragi',
+        image: './img/monogatari/karen.webp',
+    },
+    {
+        name: 'Tsukihi Araragi',
+        image: './img/monogatari/tsukihi.webp',
+    },
+    {
+        name: 'Hitagi Senjougahara',
+        image: './img/monogatari/hitagi.webp',
+    },
+    {
+        name: 'Mayoi Hachikuji',
+        image: './img/monogatari/mayoi.webp',
+    },
+    {
+        name: 'Suruga Kanbaru',
+        image: './img/monogatari/suruga.webp',
+    },
+    {
+        name: 'Nadeko Sengoku',
+        image: './img/monogatari/nadeko.webp',
+    },
+    {
+        name: 'Tsubasa Hanekawa',
+        image: './img/monogatari/tsubasa.webp',
+    },
+    {
+        name: 'Black Hanekawa',
+        image: './img/monogatari/neko.webp',
+    },
+    {
+        name: 'Shinobu Oshino',
+        image: './img/monogatari/shinobu.webp',
+    },
+    {
+        name: 'Sodachi Oikura',
+        image: './img/monogatari/sodachi.webp',
+    },
+    {
+        name: 'Ougi Oshino',
+        image: './img/monogatari/ougi.webp',
+    },
+    {
+        name: 'Meme Oshino',
+        image: './img/monogatari/meme.webp',
+    },
+    {
+        name: 'Deishuu Kaiki',
+        image: './img/monogatari/deishuu.webp',
+    },
+    {
+        name: 'Yozuru Kagenui',
+        image: './img/monogatari/yozuru.webp',
+    },
+    {
+        name: 'Yotsugi Ononoki',
+        image: './img/monogatari/yotsugi.webp',
+    },
+    {
+        name: 'Izuko Gaen',
+        image: './img/monogatari/izuko.webp',
+    },
+    {
+        name: 'Tadatsuru Teori',
+        image: './img/monogatari/tadatsuru.webp',
+    },
+    {
+        name: 'Tooe Gaen',
+        image: './img/monogatari/tooe.webp',
+    },
+    {
+        name: 'Rouka Numachi',
+        image: './img/monogatari/rouka.webp',
+    }
+]
+
 const picture = document.getElementById('picture');
 const charname = document.getElementById('name');
 const rollBtn = document.getElementById('rollBtn');
 const today = new Date().toDateString();
 //stuff from local storage
-const savedCharacter = localStorage.getItem('character');
-const savedDate = localStorage.getItem('date');
-const collection = JSON.parse(localStorage.getItem('collection')) || [];
+const savedCharacter = localStorage.getItem('character_mono');
+const savedDate = localStorage.getItem('date_mono');
+const collection = JSON.parse(localStorage.getItem('collection_mono')) || [];
 
 const collectionBtn = document.getElementById('collectionBtn');
 const collectionPanel = document.getElementById('collectionPanel');
@@ -110,8 +193,8 @@ function displayCharacter (character) {
 }
 
 function saveCharacter (character) {
-    localStorage.setItem('character', JSON.stringify(character));
-    localStorage.setItem('date', today)
+    localStorage.setItem('character_mono', JSON.stringify(character));
+    localStorage.setItem('date_mono', today)
 }
 
 if (savedCharacter && savedDate === today) {
@@ -138,7 +221,7 @@ rollBtn.onclick = function () {
         collection.push({ name: character.name, image: character.image, count: 1 });
     }
     // save updated collection to local storage
-    localStorage.setItem('collection', JSON.stringify(collection));
+    localStorage.setItem('collection_mono', JSON.stringify(collection));
     buildCollectionPanel()
 }
 

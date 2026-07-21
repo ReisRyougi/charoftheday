@@ -1,0 +1,686 @@
+const DEBUG = false; // manual debug switch
+
+const characters = [
+    // Tsukihime
+    {
+        name: 'Arcueid Brunestud',
+        image: './img/tm/t/arc.jpg'
+    },
+    {
+        name: 'Tohno Shiki',
+        image: './img/tm/t/tohno.png'
+    },
+    {
+        name: 'Tohno Akiha',
+        image: './img/tm/t/akiha.webp'
+    },
+    {
+        name: 'Hisui',
+        image: './img/tm/t/hisui.webp'
+    },
+    {
+        name: 'Yumizuka Satsuki',
+        image: './img/tm/t/satsuki.webp'
+    },
+    {
+        name: 'Len',
+        image: './img/tm/t/len.webp'
+    },
+    {
+        name: 'Kohaku',
+        image: './img/tm/t/kohaku.webp'
+    },
+    {
+        name: 'Ciel',
+        image: './img/tm/t/ciel.webp'
+    },
+    {
+        name: 'Neco-Arc',
+        image: './img/tm/t/necoarc.webp'
+    },
+    {
+        name: 'ORT',
+        image: './img/tm/t/ort.png'
+    },
+    {
+        name: 'Michael Roa Valdamjong',
+        image: './img/tm/t/mrv.png'
+    },
+    {
+        name: 'Kischur Zelretch Schweinorg',
+        image: './img/tm/t/zelretch.webp'
+    },
+    {
+        name: 'Sion Eltnam Atlasia',
+        image: './img/tm/t/sion.webp'
+    },
+    // Fate Stay Night
+    {
+        name: 'Artoria Pendragon',
+        image: './img/tm/fsn/saber.jpg'
+    },
+    {
+        name: 'Emiya Shiro',
+        image: './img/tm/fsn/shiro.jpg'
+    },
+    {
+        name: 'Illyasviel von Einzbern',
+        image: './img/tm/fsn/illya.jpg'
+    },
+    {
+        name: 'Rin Tohsaka',
+        image: './img/tm/fsn/rin.webp'
+    },
+    {
+        name: 'EMIYA',
+        image: './img/tm/fsn/emiya.webp'
+    },
+    {
+        name: 'Heracles',
+        image: './img/tm/fsn/heracles.webp'
+    },
+    {
+        name: 'Matou Sakura',
+        image: './img/tm/fsn/sakura.webp'
+    },
+    {
+        name: 'Matou Shinji',
+        image: './img/tm/fsn/shinji.webp'
+    },
+    {
+        name: 'Medusa',
+        image: './img/tm/fsn/medusa.webp'
+    },
+    {
+        name: 'Medea',
+        image: './img/tm/fsn/medea.webp'
+    },
+    {
+        name: 'Kuzuki Souichirou',
+        image: './img/tm/fsn/souichirou.webp'
+    },
+    {
+        name: 'Sasaki Kojirou',
+        image: './img/tm/fsn/kojirou.webp'
+    },
+    {
+        name: 'Cú Chulainn',
+        image: './img/tm/fsn/cu.jpg'
+    },
+    {
+        name: 'Kotomine Kirei',
+        image: './img/tm/fsn/kirei.jpg'
+    },
+    {
+        name: 'Gilgamesh',
+        image: './img/tm/fsn/gil.jpg'
+    },
+    {
+        name: 'Matou Zouken',
+        image: './img/tm/fsn/zouken.webp'
+    },
+    {
+        name: 'Hassan of the Cursed Arm',
+        image: './img/tm/fsn/hassan.webp'
+    },
+    {
+        name: 'Fujimura Taiga',
+        image: './img/tm/fsn/taiga.webp'
+    },
+    {
+        name: 'Artoria Pendragon Alter',
+        image: './img/tm/fsn/salter.webp'
+    },
+    // KnK
+    {
+        name: 'Ryougi Shiki',
+        image: './img/tm/knk/ryougi.jpg'
+    },
+    {
+        name: 'Araya Souren',
+        image: './img/tm/knk/araya.webp'
+    },
+    {
+        name: 'Kokutou Mikiya',
+        image: './img/tm/knk/mikiya.webp'
+    },
+    {
+        name: 'Kokutou Azaka',
+        image: './img/tm/knk/azaka.webp'
+    },
+    {
+        name: 'Asagami Fujino',
+        image: './img/tm/knk/fujino.webp'
+    },
+    {
+        name: 'Aozaki Touko',
+        image: './img/tm/knk/touko.webp'
+    },
+    // Mahoyo
+    {
+        name: 'Aozaki Aoko',
+        image: './img/tm/mh/aoko.jpg'
+    },
+    {
+        name: 'Kuonji Alice',
+        image: './img/tm/mh/alice.jpg'
+    },
+    {
+        name: 'May Riddell Archelot',
+        image: './img/tm/mh/may.jpg'
+    },
+    {
+        name: 'Lugh Beowulf',
+        image: './img/tm/mh/beo.webp'
+    },
+    {
+        name: 'Tobimaru Tsukiji',
+        image: './img/tm/mh/tobimaru.jpg'
+    },
+    {
+        name: 'Kojika Kumari',
+        image: './img/tm/mh/kumari.jpg'
+    },
+    {
+        name: 'Housuke Kinomi',
+        image: './img/tm/mh/kinomi.jpg'
+    },
+    {
+        name: 'Suse Ritsuka',
+        image: './img/tm/mh/ritsuka.jpg'
+    },
+    {
+        name: 'Suse Yuika',
+        image: './img/tm/mh/yuika.jpg'
+    },
+    {
+        name: 'Fumizuka Eiri',
+        image: './img/tm/mh/eiri.webp'
+    },
+    // Fate Hollow Ataraxia
+    {
+        name: 'Luviagelita Edelfelt',
+        image: './img/tm/fha/luvia.webp'
+    },
+    {
+        name: 'Bazett Fraga McRemitz',
+        image: './img/tm/fha/bazett.webp'
+    },
+    {
+        name: 'Caren Hortensia',
+        image: './img/tm/fha/caren.webp'
+    },
+    {
+        name: 'Euryale',
+        image: './img/tm/fha/euryale.webp'
+    },
+    {
+        name: 'Stheno',
+        image: './img/tm/fha/stheno.webp'
+    },
+    {
+        name: 'Sella',
+        image: './img/tm/fha/sella.jpg'
+    },
+    {
+        name: 'Leysritt',
+        image: './img/tm/fha/leysritt.jpg'
+    },
+    {
+        name: 'Angra Mainyu',
+        image: './img/tm/fha/angra.webp'
+    },
+    // Fate Zero
+    {
+        name: 'Tohsaka Aoi',
+        image: './img/tm/fz/aoi.webp'
+    },
+    {
+        name: 'Matou Kariya',
+        image: './img/tm/fz/kariya.webp'
+    },
+    {
+        name: 'Kayneth El-Melloi Archibald',
+        image: './img/tm/fz/kayneth.webp'
+    },
+    {
+        name: 'Emiya Kiritsugu',
+        image: './img/tm/fz/kiritsugu.webp'
+    },
+    {
+        name: 'Diarmuid Ua Duibhne',
+        image: './img/tm/fz/diar.webp'
+    },
+    {
+        name: 'Lancelot (Berserker)',
+        image: './img/tm/fz/berselot.webp'
+    },
+    {
+        name: 'Hisau Maiya',
+        image: './img/tm/fz/maiya.webp'
+    },
+    {
+        name: 'Natalia Kaminski',
+        image: './img/tm/fz/natalia.webp'
+    },
+    {
+        name: 'Gilles de Rais',
+        image: './img/tm/fz/gilles.webp'
+    },
+    {
+        name: 'Hassan of the Hundred Faces',
+        image: './img/tm/fz/100h.webp'
+    },
+    {
+        name: 'Uryuu Ryuunosuke',
+        image: './img/tm/fz/uryuu.webp'
+    },
+    {
+        name: 'Irisviel von Einzbern',
+        image: './img/tm/fz/iri.webp'
+    },
+    {
+        name: 'Iskandar',
+        image: './img/tm/fz/iskandar.webp'
+    },
+    {
+        name: 'Sola-Ui Nuada-Re Sophia-Ri',
+        image: './img/tm/fz/sola.webp'
+    },
+    {
+        name: 'Shirley',
+        image: './img/tm/fz/shirley.webp'
+    },
+    {
+        name: 'Tohsaka Tokiomi',
+        image: './img/tm/fz/tokiomi.webp'
+    },
+    {
+        name: 'Waver Velvet',
+        image: './img/tm/fz/waver.webp'
+    },
+    // Fate Strange Fake
+    {
+        name: 'Ayaka Sajyou',
+        image: './img/tm/fsf/ayaka.jpg'
+    },
+    {
+        name: 'Bazdilot Cordelion',
+        image: './img/tm/fsf/bazdilot.webp'
+    },
+    {
+        name: 'No Name Assassin',
+        image: './img/tm/fsf/zealot.webp'
+    },
+    {
+        name: 'Pale Rider',
+        image: './img/tm/fsf/palerider.webp'
+    },
+    {
+        name: 'Philia',
+        image: './img/tm/fsf/philia.webp'
+    },
+    {
+        name: 'Enkidu',
+        image: './img/tm/fsf/enkidu.jpg'
+    },
+    {
+        name: 'Richard I',
+        image: './img/tm/fsf/richard.webp'
+    },
+    {
+        name: 'Faldeus Dioland',
+        image: './img/tm/fsf/faldeus.webp'
+    },
+    {
+        name: 'Flat Escardos',
+        image: './img/tm/fsf/flat.webp'
+    },
+    {
+        name: 'Francesca Prelati',
+        image: './img/tm/fsf/francesca.webp'
+    },
+    {
+        name: 'François Prelati',
+        image: './img/tm/fsf/francois.png'
+    },
+    {
+        name: 'Sigma',
+        image: './img/tm/fsf/sigma.webp'
+    },
+    {
+        name: 'Hassan of the Fathomless Rift',
+        image: './img/tm/fsf/hassan.webp'
+    },
+    {
+        name: 'Hippolyta',
+        image: './img/tm/fsf/hippolyta.webp'
+    },
+    {
+        name: 'Tiné Chelc',
+        image: './img/tm/fsf/tine.webp'
+    },
+    {
+        name: 'Jack the Ripper (Berserker)',
+        image: './img/tm/fsf/jackbers.webp'
+    },
+    {
+        name: 'Orlando Reeve',
+        image: './img/tm/fsf/orlando.webp'
+    },
+    {
+        name: 'Vera Levitt',
+        image: './img/tm/fsf/vera.webp'
+    },
+    {
+        name: 'Alcides',
+        image: './img/tm/fsf/alcides.jpg'
+    },
+    {
+        name: 'Kuruoka Tsubaki',
+        image: './img/tm/fsf/tsubaki.webp'
+    },
+    {
+        name: 'Alexandre Dumas',
+        image: './img/tm/fsf/dumas.jpg'
+    },
+    // Fate Apocrypha
+    {
+        name: 'Caules Forvedge Yggdmillennia',
+        image: './img/tm/fa/caules.webp'
+    },
+    {
+        name: 'Celenike Icecolle Yggdmillennia',
+        image: './img/tm/fa/celenike.jpg'
+    },
+    {
+        name: 'Chiron',
+        image: './img/tm/fa/chiron.webp'
+    },
+    {
+        name: 'Darnic Prestone Yggdmillennia',
+        image: './img/tm/fa/darnic.webp'
+    },
+    {
+        name: 'Rikudou Reika',
+        image: './img/tm/fa/reika.webp'
+    },
+    {
+        name: 'Roche Frain Yggdmillennia',
+        image: './img/tm/fa/roche.webp'
+    },
+    {
+        name: 'Fiore Forvedge Yggdmillennia',
+        image: './img/tm/fa/fiore.webp'
+    },
+    {
+        name: 'Frankenstein',
+        image: './img/tm/fa/fran.webp'
+    },
+    {
+        name: 'Sieg',
+        image: './img/tm/fa/sieg.webp'
+    },
+    {
+        name: 'Semiramis',
+        image: './img/tm/fa/semiramis.webp'
+    },
+    {
+        name: 'Siegfried',
+        image: './img/tm/fa/siegfried.webp'
+    },
+    {
+        name: 'Spartacus',
+        image: './img/tm/fa/spartacus.webp'
+    },
+    {
+        name: 'Gordes Musik Yggdmillennia',
+        image: './img/tm/fa/gordes.webp'
+    },
+    {
+        name: 'Vlad III',
+        image: './img/tm/fa/vlad.jpg'
+    },
+    {
+        name: 'Jack the Ripper (Assassin)',
+        image: './img/tm/fa/jackie.webp'
+    },
+    {
+        name: 'William Shakespeare',
+        image: './img/tm/fa/william.webp'
+    },
+    {
+        name: "Jeanne d'Arc",
+        image: './img/tm/fa/jeanne.jpg'
+    },
+    {
+        name: 'Karna',
+        image: './img/tm/fa/karna.webp'
+    },
+    {
+        name: 'Amakusa Shirou Tokisada',
+        image: './img/tm/fa/amakusa.webp'
+    },
+    {
+        name: 'Astolfo',
+        image: './img/tm/fa/astolfo.webp'
+    },
+    {
+        name: 'Atalanta',
+        image: './img/tm/fa/atalanta.webp'
+    },
+    {
+        name: 'Atalanta Alter',
+        image: './img/tm/fa/atalter.webp'
+    },
+    {
+        name: 'Avicebron',
+        image: './img/tm/fa/avicebron.webp'
+    },
+    {
+        name: 'Mordred',
+        image: './img/tm/fa/mordred.webp'
+    },
+    {
+        name: 'Achilles',
+        image: './img/tm/fa/achilles.webp'
+    },
+    {
+        name: 'Shishigou Kairi',
+        image: './img/tm/fa/kairi.webp'
+    },
+    // Fate Extra
+    {
+        name: 'Alice',
+        image: './img/tm/fe/alice.webp'
+    },
+    {
+        name: 'Li Shuwen',
+        image: './img/tm/fe/li.webp'
+    },
+    {
+        name: 'Scathach',
+        image: './img/tm/fe/scathach.webp'
+    },
+    {
+        name: 'Lü Bu',
+        image: './img/tm/fe/lu.webp'
+    },
+    {
+        name: 'BB',
+        image: './img/tm/fe/bb.webp'
+    },
+    {
+        name: 'Meltryllis',
+        image: './img/tm/fe/melt.webp'
+    },
+    {
+        name: 'Nero Claudius Caesar Augustus Germanicus',
+        image: './img/tm/fe/nero.webp'
+    },
+    {
+        name: 'Passionlip',
+        image: './img/tm/fe/passionlip.webp'
+    },
+    {
+        name: 'Elizabeth Báthory',
+        image: './img/tm/fe/eli.webp'
+    },
+    {
+        name: 'Rani VIII',
+        image: './img/tm/fe/rani.webp'
+    },
+    {
+        name: 'Kishinami Hakuno',
+        image: './img/tm/fe/hakuno.webp'
+    },
+    {
+        name: 'Tamamo-no-Mae',
+        image: './img/tm/fe/tamamo.webp'
+    },
+
+]
+
+const picture = document.getElementById('picture');
+const charname = document.getElementById('name');
+const rollBtn = document.getElementById('rollBtn');
+const today = new Date().toDateString();
+//stuff from local storage
+const savedCharacter = localStorage.getItem('character_tm');
+const savedDate = localStorage.getItem('date_tm');
+const collection = JSON.parse(localStorage.getItem('collection_tm')) || [];
+
+const collectionBtn = document.getElementById('collectionBtn');
+const collectionPanel = document.getElementById('collectionPanel');
+
+function buildCollectionPanel() {
+    collectionPanel.innerHTML = '';
+    const grid = document.createElement('section');
+    grid.className = 'collection-grid';
+    characters.forEach((character) => {
+        const cell = document.createElement('div');
+        cell.style.cssText = `text-align: center; font-size: 0.75rem;`;
+        const found = collection.find(entry => entry.name === character.name);
+        const img = document.createElement('img');
+        img.style.cssText = `width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem;`;
+        img.src = found ? character.image : './img/unknown.jpg';
+        img.title = found
+            ? (found.count > 1 ? `${character.name} x${found.count}` : character.name)
+            : 'locked';
+        cell.appendChild(img);
+        grid.appendChild(cell);
+    })
+    collectionPanel.appendChild(grid);
+}
+
+// open collection
+collectionBtn.onclick = function() {
+    collectionPanel.classList.toggle('open');
+}
+// close collection only if pressed outside of collection
+document.onclick = function(event) {
+    if (!collectionPanel.contains(event.target) && !collectionBtn.contains(event.target))  {
+        collectionPanel.classList.remove('open');
+    }
+}
+
+function showDebugGrid() {
+    if (!DEBUG) return;
+    // make the grid with all characters
+    const grid = document.createElement('section');
+    grid.style.cssText = `
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+        padding: 2rem;
+        margin-top: 2rem;
+    `;
+    // looping over every char
+    characters.forEach((char, i) => {
+        const cell = document.createElement('div');
+        cell.style.cssText = `text-align: center; font-size: 0.75rem;`;
+        const img = document.createElement('img');
+        img.src = char.image;
+        img.alt = char.name;
+        img.style.cssText = `width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem;`;
+        const label = document.createElement('p');
+        // red thing if image fails to load
+        img.onerror = () => {
+            img.style.border = '3px solid red';
+            label.style.color = 'red';
+        };
+        label.innerText = `[${i}] ${char.name}`;
+        cell.appendChild(img);
+        cell.appendChild(label);
+        grid.appendChild(cell);
+    });
+    document.querySelector('main').appendChild(grid);
+}
+
+showDebugGrid();
+
+function getTimeUntilMidnight() {
+    const now = new Date();
+    const midnight = new Date();
+    midnight.setHours(24, 0, 0, 0);
+    const diff = midnight - now;
+    const hours   = Math.floor(diff / 1000 / 60 / 60);
+    const minutes = Math.floor(diff / 1000 / 60) % 60;
+    const seconds = Math.floor(diff / 1000) % 60;
+    // padStart to make the thing be like 09:07:04 and not 9:7:4
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function startCountdown() {
+    rollBtn.innerText = `Come back in ${getTimeUntilMidnight()}`;
+    // setInterval(func, 1000) is to repeat function every sec
+    const interval = setInterval(() => {
+        const time = getTimeUntilMidnight();
+        rollBtn.innerText = `Come back in ${time}`;
+        if (time === '00:00:00') {
+            clearInterval(interval);
+            location.reload();
+        }
+    }, 1000);
+}
+
+function displayCharacter (character) {
+    picture.src = character.image;
+    picture.alt = character.name;
+    charname.innerText = character.name;
+}
+
+function saveCharacter (character) {
+    localStorage.setItem('character_tm', JSON.stringify(character));
+    localStorage.setItem('date_tm', today)
+}
+
+if (savedCharacter && savedDate === today) {
+    const character = JSON.parse(savedCharacter);
+    displayCharacter(character);
+    rollBtn.disabled = true;
+    startCountdown();
+}
+
+rollBtn.onclick = function () {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    const character = characters[randomIndex];
+    displayCharacter(character);
+    saveCharacter(character);
+    rollBtn.disabled = true;
+    startCountdown();
+    // the find thing returns the object if found or undefined if not
+    const found = collection.find(entry => entry.name === character.name);
+    if (found) {
+        // character already in collection so make count bigger
+        found.count++;
+    } else {
+        // new character so add to collection
+        collection.push({ name: character.name, image: character.image, count: 1 });
+    }
+    // save updated collection to local storage
+    localStorage.setItem('collection_tm', JSON.stringify(collection));
+    buildCollectionPanel()
+}
+
+buildCollectionPanel()

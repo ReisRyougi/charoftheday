@@ -26,6 +26,22 @@ h1 {
     color: white;
 }
 
+.backBtn {
+    position: absolute;
+    left: 1rem;
+    top: 3rem;
+    color: white;
+    text-decoration: none;
+    background: rgba(18, 27, 48, 0.82);
+    border: 1px solid rgba(160, 190, 255, 0.25);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+}
+
+.backBtn:hover {
+    background: rgba(160, 190, 255, 0.25);
+}
+
 #collectionBtn {
     position: absolute;
     right: 1rem;
@@ -179,6 +195,13 @@ footer a, a:visited, a:hover, a:active {
     #name {
         font-size: 1.5rem;
         text-align: center;
+    }
+
+    .backBtn {
+        position: static;
+        display: block;
+        width: fit-content;
+        margin: 0 auto 1rem;
     }
 
     #collectionBtn {
